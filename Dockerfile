@@ -15,3 +15,14 @@ RUN apt-get update \
 RUN npm install -g @lhci/cli@0.9.0
 RUN npm install -g lighthouse
 
+# Setup a user to avoid doing everything as root
+RUN groupadd --system lhci && \
+  useradd --system --create-home --gid lhci lhci && \
+  mkdir --parents /home/lhci/reports && \
+  chown --recursive lhci:lhci /home/lhci
+
+USER lhci
+#WORKDIR /home/lhci/reports
+RUN lhci autorun --config=lighthouserc-ci.js
+#CMD [ "lhci", "autorun", "--config=lighthouserc-ci.js"]
+
