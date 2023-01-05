@@ -23,6 +23,6 @@ RUN groupadd --system lhci && \
   mkdir --parents /home/lhci/reports && \
   mkdir --parents /.lighthouseci && \
   chown --recursive lhci:lhci /home/lhci
-EXPOSE 8080/tcp
+EXPOSE 8081/tcp
 USER lhci
 RUN [ "lhci", "autorun", "--config=lighthouserc-ci.js"]
