@@ -30,4 +30,4 @@ COPY package.json /home/lhci/reports
 
 USER lhci
 WORKDIR /home/lhci/reports
-CMD [ "lhci", "autorun", "--config=lighthouserc-ci.js"]
+RUN lhci autorun
