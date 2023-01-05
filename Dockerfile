@@ -20,6 +20,7 @@ RUN npm install -g lighthouse
 RUN groupadd --system lhci && \
   useradd --system --create-home --gid lhci lhci && \
   mkdir --parents /home/lhci/reports && \
+  mkdir -p /.lighthouseci && \
   chown --recursive lhci:lhci /home/lhci
 
 USER lhci
