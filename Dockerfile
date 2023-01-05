@@ -1,6 +1,5 @@
 FROM node:14-buster-slim
-COPY lighthouserc-ci.js .
-COPY package.json .
+
 # Install utilities
 RUN apt-get update --fix-missing && apt-get -y upgrade && apt-get install -y git wget gnupg && apt-get clean
 
@@ -27,5 +26,4 @@ COPY lighthouserc-ci.js /home/lhci/reports
 COPY package.json /home/lhci/reports
 
 USER lhci
-WORKDIR /home/lhci/reports
 RUN lhci autorun --config=lighthouserc-ci.js
