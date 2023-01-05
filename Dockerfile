@@ -14,6 +14,15 @@ RUN apt-get update \
 # Install Lighthouse CI
 RUN npm install -g @lhci/cli@0.9.0
 RUN npm install -g lighthouse
+RUN npm install -g puppeteer
+
+# Setup a user to avoid doing everything as root
+RUN groupadd --system lhci && \
+  useradd --system --create-home --gid lhci lhci && \
+  mkdir --parents /home/lhci/reports && \
+  chown --recursive lhci:lhci /home/lhci
+  
+RUN mkdir -p /home/lhci/reports
 
 USER lhci
 RUN lhci autorun --config=lighthouserc-ci.js
