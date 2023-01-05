@@ -24,6 +24,7 @@ RUN groupadd --system lhci && \
   chown --recursive lhci:lhci /home/lhci
   
 RUN mkdir -p /home/lhci/reports
+RUN mkdir -p /.lighthouseci
 COPY lighthouserc-ci.js /home/lhci/reports
 COPY package.json /home/lhci/reports
 
