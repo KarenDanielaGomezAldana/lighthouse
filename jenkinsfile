@@ -6,11 +6,5 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('Generar reporte performance'){
-            steps{
-                sh 'lighthouse-ci https://www.ciencuadras.com --jsonReport --report=.'
-                lighthouseReport file: './report.json', name: 'My Report'
-            }
-        }
     }
 }
