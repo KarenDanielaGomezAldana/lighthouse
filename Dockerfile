@@ -8,8 +8,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 RUN apt-get update \
     && apt-get install -y google-chrome-stable --no-install-recommends \
-    && apt-get -y install procps
-    && apt-get clean
+    && apt-get clean -y install procps
 
 # Install Lighthouse CI
 RUN npm install -g @lhci/cli@0.9.0
