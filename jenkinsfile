@@ -6,7 +6,7 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('Test') {
+        stage('Test2') {
             steps {
                 docker ps
             }
