@@ -22,8 +22,6 @@ RUN groupadd --system lhci && \
   useradd --system --create-home --gid lhci lhci && \
   mkdir --parents /home/lhci/reports && \
   chown --recursive lhci:lhci /home/lhci
-  
-WORKDIR /lighthouseci
 
 USER lhci
 RUN lhci autorun --config=lighthouserc-ci.js
