@@ -24,6 +24,7 @@ RUN groupadd --system lhci && \
   
 RUN mkdir -p /home/lhci/reports
 COPY lighthouserc-ci.js /home/lhci/reports
+COPY package.json /home/lhci/reports
 
 USER lhci
 WORKDIR /home/lhci/reports
