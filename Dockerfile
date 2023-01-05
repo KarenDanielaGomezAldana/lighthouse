@@ -1,4 +1,6 @@
 FROM node:14-buster-slim
+COPY lighthouserc-ci.js .
+COPY package.json .
 
 # Install utilities
 RUN apt-get update --fix-missing && apt-get -y upgrade && apt-get install -y git wget gnupg && apt-get clean
