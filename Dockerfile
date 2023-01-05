@@ -25,4 +25,4 @@ RUN groupadd --system lhci && \
   chown --recursive lhci:lhci /home/lhci
 
 USER lhci
-CMD [ "lhci", "autorun", "--config=lighthouserc-ci.js"]
+RUN lhci autorun --config=lighthouserc-ci.js
