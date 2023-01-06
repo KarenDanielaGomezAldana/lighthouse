@@ -3,14 +3,21 @@ module.exports = {
     collect: {
       startServerCommand: "npm run start",
       numberOfRuns: 3,
-      url: ["https://www.ciencuadras.com"]
+      url: ["https://www.ciencuadras.com/"],
+      //chromePath: "/usr/bin/google-chrome",
+    },
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
     },
     assert: {
       assertions: {
-        "categories:performance": ["error", { minScore: 0.6 }],
-        "categories:accessibility": ["error", { minScore: 0.6 }],
-        "categories:best-practices": ["error", { minScore: 0.6 }],
-        "categories:seo": ["error", { minScore: 0.6 }],
+        "categories:performance": ["error", { minScore: 99 }],
+        "categories:accessibility": ["error", { minScore: 99 }],
+        "categories:best-practices": ["error", { minScore: 99 }],
+        "categories:seo": ["error", { minScore: 99 }],
         "categories.pwa": "off",
       },
     },
