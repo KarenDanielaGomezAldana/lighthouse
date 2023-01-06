@@ -11,6 +11,8 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update \
     && apt-get install -y google-chrome-stable --no-install-recommends \
     && apt-get clean
+    
+RUN sudo apt-get -y install procps
 
 # Install Lighthouse CI
 RUN npm install -g @lhci/cli@0.9.0
@@ -23,6 +25,6 @@ RUN groupadd --system lhci && \
   mkdir --parents /home/lhci/reports && \
   mkdir --parents /.lighthouseci && \
   chown --recursive lhci:lhci /home/lhci
-EXPOSE 8081/tcp
+
 USER lhci
 RUN [ "lhci", "autorun", "--config=lighthouserc-ci.js"]
