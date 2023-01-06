@@ -24,6 +24,8 @@ RUN groupadd --system lhci && \
   useradd --system --create-home --gid lhci lhci && \
   mkdir --parents /home/lhci/reports && \
   chown --recursive lhci:lhci /home/lhci
+  
+COPY lighthouserc-ci.js /home/lhci/reports
 
 USER lhci
 WORKDIR /home/lhci/reports
