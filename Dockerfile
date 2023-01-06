@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get install -y google-chrome-stable --no-install-recommends \
     && apt-get clean
     
-RUN sudo apt-get -y install procps
+RUN apt-get -y install procps
 
 # Install Lighthouse CI
 RUN npm install -g @lhci/cli@0.9.0
