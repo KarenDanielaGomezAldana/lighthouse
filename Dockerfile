@@ -27,4 +27,5 @@ RUN groupadd --system lhci && \
   chown --recursive lhci:lhci /home/lhci
 
 USER lhci
+WORKDIR /home/lhci/reports
 RUN lhci autorun --config=lighthouserc-ci.js
