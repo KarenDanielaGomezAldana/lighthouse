@@ -29,4 +29,4 @@ COPY lighthouserc-ci.js /home/lhci/reports
 
 USER lhci
 WORKDIR /home/lhci/reports
-RUN lhci autorun --output-path=./lighthouse-report.html --quiet --chrome-flags='--headless' 'https://www.ciencuadras.com/'
+RUN lhci autorun --output-path=./lighthouse-report.html --quiet --chrome-flags='--headless' --config=lighthouserc-ci.js
