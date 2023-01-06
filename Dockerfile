@@ -29,4 +29,4 @@ COPY lighthouserc-ci.js /home/lhci/reports
 
 USER lhci
 WORKDIR /home/lhci/reports
-lighthouse --chrome-flags="--headless" https://www.ciencuadras.com
+RUN lighthouse --chrome-flags="--headless" https://www.ciencuadras.com
