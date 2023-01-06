@@ -4,7 +4,6 @@ module.exports = {
       startServerCommand: "npm run start",
       numberOfRuns: 3,
       url: ["https://www.ciencuadras.com/"],
-      chromePath: "/usr/bin/google-chrome",
     },
     assert: {
       assertions: {
